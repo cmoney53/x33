@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Iframe Userscripts — Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header id="topbar">
+    <input id="url" placeholder="https://example.com" />
+    <button id="loadBtn">Load</button>
+    <button id="openBtn">Open proxied (new tab)</button>
+    <label title="If checked, inject enabled scripts whenever a page loads">
+      <input id="injectOnLoad" type="checkbox" /> Inject on load
+    </label>
+  </header>
+
+  <main id="main">
+    <iframe id="targetFrame" srcdoc="<p>Enter a URL and click Load</p>"></iframe>
+  </main>
+
+  <!-- Corner menu -->
+  <aside id="cornerMenu" aria-hidden="false">
+    <button id="menuToggle" title="Menu">≡</button>
+    <div id="menuContent" hidden>
+      <h3>Userscripts</h3>
+      <div id="scriptsList" aria-live="polite"></div>
+      <div style="margin-top:8px">
+        <button id="addScriptBtn">Add Script</button>
+        <button id="exportBtn">Export</button>
+        <button id="importBtn">Import</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Edit modal (simple) -->
+  <div id="modal" class="hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <h4 id="modalTitle">Edit script</h4>
+      <input id="scriptName" placeholder="Script name" />
+      <textarea id="scriptCode" placeholder="// JavaScript code"></textarea>
+      <div class="modal-actions">
+        <button id="saveScript">Save</button>
+        <button id="cancelScript">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <template id="scriptRowTpl">
+    <div class="script-row">
+      <input class="script-enable" type="checkbox" />
+      <span class="script-name"></span>
+      <button class="run-now">Run</button>
+      <button class="edit-script">Edit</button>
+      <button class="remove-script">Remove</button>
+    </div>
+  </template>
