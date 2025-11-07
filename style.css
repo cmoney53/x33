@@ -1,28 +1,52 @@
-:root{
-  --accent:#0b74de;
-  --panel-bg: #fff;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+body {
+  background: #0e1013;
+  color: #d1d5db;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
 }
-*{box-sizing:border-box}
-body{margin:0;height:100vh;display:flex;flex-direction:column;background:#f4f6f8;color:#111}
-#topbar{display:flex;gap:8px;padding:10px;background:#0f1720;color:#fff;align-items:center}
-#topbar input{flex:1;padding:8px;border-radius:6px;border:1px solid #333;background:#fff;color:#000}
-#topbar button{padding:8px 10px;border-radius:6px;border:0;background:var(--accent);color:#fff;cursor:pointer}
-#main{flex:1;display:block}
-iframe#targetFrame{width:100%;height:calc(100vh - 72px);border:0;background:#fff}
 
-/* corner menu */
-#cornerMenu{position:fixed;right:16px;bottom:16px;z-index:999999}
-#menuToggle{width:52px;height:52px;border-radius:12px;background:var(--accent);color:#fff;border:0;font-size:22px;cursor:pointer}
-#menuContent{width:320px;padding:12px;background:var(--panel-bg);box-shadow:0 10px 30px rgba(0,0,0,.2);border-radius:10px;margin-top:8px}
-.script-row{display:flex;gap:8px;align-items:center;margin:6px 0}
-.script-row .script-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.script-row button{padding:4px 6px;border-radius:6px;border:0;background:#eee;cursor:pointer}
+header {
+  background: #1a1d22;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #2d323b;
+}
 
-/* modal */
-#modal.hidden{display:none}
-#modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.4);z-index:100000}
-.modal-content{width:720px;background:#fff;padding:12px;border-radius:8px;box-shadow:0 12px 36px rgba(0,0,0,.25)}
-.modal-content input{width:100%;padding:8px;margin-bottom:8px}
-.modal-content textarea{width:100%;height:320px;padding:10px;resize:vertical}
-.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:8px}
+h1 { color: #22d3ee; }
+
+main {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+#script-list, #output {
+  background: #1e2228;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 45%;
+}
+
+.script-card {
+  background: #2a2f38;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background: #22d3ee;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button.off {
+  background: #444;
+  color: #999;
+}
