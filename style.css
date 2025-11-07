@@ -1,38 +1,37 @@
 body {
   background: #0e1013;
   color: #d1d5db;
-  font-family: sans-serif;
+  font-family: monospace;
   margin: 0;
   padding: 0;
 }
 
 header {
+  padding: 1rem;
   background: #1a1d22;
-  padding: 1rem;
   text-align: center;
-  border-bottom: 2px solid #2d323b;
 }
 
-h1 { color: #22d3ee; }
+#search {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  width: 50%;
+  margin-top: 0.5rem;
+}
 
-main {
+#scripts {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   padding: 1rem;
-  gap: 1rem;
-}
-
-#script-list, #output {
-  background: #1e2228;
-  padding: 1rem;
-  border-radius: 10px;
-  width: 45%;
+  max-height: 70vh;
+  overflow-y: auto;
 }
 
 .script-card {
   background: #2a2f38;
-  margin-bottom: 0.5rem;
-  padding: 0.5rem;
+  margin-bottom: 6px;
+  padding: 8px;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
@@ -46,7 +45,16 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
 button.off {
   background: #444;
-  color: #999;
+  color: #aaa;
+}
+
+#console {
+  padding: 1rem;
+  background: #1a1d22;
+  height: 120px;
+  overflow-y: auto;
+  border-top: 2px solid #2d323b;
 }
